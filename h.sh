@@ -14,6 +14,6 @@
 
 case "$HSH_ACTION" in
 	clone|bundle-out)
-		pk install emacs-nox
+		yes | pk install emacs
 		;;
 esac
