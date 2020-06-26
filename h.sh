@@ -15,5 +15,11 @@
 case "$HSH_ACTION" in
 	clone|bundle-out)
 		yes | pk install emacs
+		if command -v systemd >/dev/null
+		then
+		    systemctl --user daemon-reload
+		    systemctl --user enable emacs
+		    systemctl --user start emacs
+		fi
 		;;
 esac
