@@ -21,8 +21,8 @@ case "$HSH_ACTION" in
 		    systemctl --user enable emacs
 		    systemctl --user start emacs
 		fi
-		yes | pk install ispell
-		yes | pk install ifrench-gut
-		yes | pk install iamerican-huge
+		yes | "$HSH_ROOT/bin/pk" install ispell
+		yes | "$HSH_ROOT/bin/pk" install ifrench-gut
+		yes | "$HSH_ROOT/bin/pk" install iamerican-huge
 		;;
 esac
