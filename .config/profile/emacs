@@ -3,3 +3,5 @@
 export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t"
 export VISUAL="emacsclient -c -a emacs -n"
+
+export PATH="$PATH:$HOME/.emacs.d/bin"

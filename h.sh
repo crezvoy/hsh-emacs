@@ -15,14 +15,18 @@
 case "$HSH_ACTION" in
 	clone|bundle-out)
 		yes | pk install emacs
-		if command -v systemd >/dev/null
-		then
-		    systemctl --user daemon-reload
-		    systemctl --user enable emacs
-		    systemctl --user start emacs
-		fi
-		yes | "$HSH_ROOT/bin/pk" install ispell
-		yes | "$HSH_ROOT/bin/pk" install ifrench-gut
-		yes | "$HSH_ROOT/bin/pk" install iamerican-huge
+		yes | pk install git
+		git clone --depth 1 https://github.com/hlissner/doom-emacs $HSH_ROOT/.emacs.d
+		yes | "$HSH_ROOT/.emacs.d/bin/doom" -p ~/.config/doom install
+
+		# if command -v systemd >/dev/null
+		# then
+		#     systemctl --user daemon-reload
+		#     systemctl --user enable emacs
+		#     systemctl --user start emacs
+		# fi
+		yes | "$HSH_ROOT/bin/pk" install aspell
+		yes | "$HSH_ROOT/bin/pk" install aspell-fr
+		yes | "$HSH_ROOT/bin/pk" install aspell-en
 		;;
 esac
