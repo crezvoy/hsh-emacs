@@ -11,6 +11,19 @@
       custom-file (concat "~/.config/doom/parts/custom.el"))
 
 
+(setq delete-by-moving-to-trash t                      ; Delete files to trash
+      uniquify-buffer-name-style 'forward              ; Uniquify buffer names
+      window-combination-resize t)                      ; take new window space from all
+
+(display-time-mode 1)
+(unless (equal "Battery status not available"
+               (battery))
+  (display-battery-mode 1))                       ; On laptops it's nice to know how much power you have
+
+
+;
+; (defvar fancy-splash-image-template)
+;   (expand-file-name "misc/splash-images/blackhole-lines-template.svg" doom-private-dir)
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
