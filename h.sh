@@ -16,6 +16,7 @@ case "$HSH_ACTION" in
 	clone|bundle-out)
 		yes | pk install emacs
 		yes | pk install git
+		[ -e "$HSH_ROOT/.emacs.d" ] && rm -rf "$HSH_ROOT/.emacs.d"
 		git clone --depth 1 https://github.com/hlissner/doom-emacs $HSH_ROOT/.emacs.d
 		yes | "$HSH_ROOT/.emacs.d/bin/doom" -p ~/.config/doom install
 
