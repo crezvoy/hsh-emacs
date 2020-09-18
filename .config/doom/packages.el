@@ -52,3 +52,4 @@
 (package! shell-here)
 (package! org-super-agenda)
 (package! emojify)
+(package! mu4e-alert)
