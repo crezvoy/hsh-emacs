@@ -53,3 +53,5 @@
 (package! org-super-agenda)
 (package! emojify)
 (package! mu4e-alert)
+(package! oauth2)
+(package! org-caldav)
