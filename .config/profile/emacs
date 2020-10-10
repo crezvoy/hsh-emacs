@@ -4,4 +4,6 @@ export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -t -a ''"
 export VISUAL="emacsclient -c -a '' -n"
 
+export DOOMDIR="$HOME/.config/doom"
+
 export PATH="$PATH:$HOME/.emacs.d/bin"
