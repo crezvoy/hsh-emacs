@@ -14,8 +14,7 @@
 
 case "$HSH_ACTION" in
 	clone|bundle-out)
-		yes | pk install emacs
-		yes | pk install git
+		brew install emacs
 		[ -e "$HSH_ROOT/.emacs.d" ] && rm -rf "$HSH_ROOT/.emacs.d"
 		git clone --depth 1 https://github.com/hlissner/doom-emacs $HSH_ROOT/.emacs.d
 		yes | "$HSH_ROOT/.emacs.d/bin/doom" -p ~/.config/doom install
@@ -26,8 +25,6 @@ case "$HSH_ACTION" in
 		#     systemctl --user enable emacs
 		#     systemctl --user start emacs
 		# fi
-		yes | "$HSH_ROOT/bin/pk" install aspell
-		yes | "$HSH_ROOT/bin/pk" install aspell-fr
-		yes | "$HSH_ROOT/bin/pk" install aspell-en
+		brew install aspell
 		;;
 esac
