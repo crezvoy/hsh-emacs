@@ -38,7 +38,7 @@
        ;;nav-flash         ; blink cursor line after big motions
        neotree           ; a project drawer, like NERDTree for vim
        ophints           ; highlight the region an operation acts on
-       (popup +defaults)   ; tame sudden yet inevitable temporary windows
+       ;; (popup +defaults)   ; tame sudden yet inevitable temporary windows
        ligatures         ; ligatures or substitute text with pretty symbols
        ;;tabs              ; a tab bar for Emacs
        ;;treemacs          ; a project drawer, like neotree but cooler
@@ -99,7 +99,7 @@
        pdf               ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
        ;;rgb               ; creating color strings
-       ;;taskrunner        ; taskrunner for all your projects
+       taskrunner        ; taskrunner for all your projects
        ;;terraform         ; infrastructure as code
        tmux              ; an API for interacting with tmux
        ;;upload            ; map local to remote projects via ssh/ftp
@@ -166,7 +166,7 @@
        :email
        (mu4e +gmail)
        ;;notmuch
-       ;;(wanderlust +gmail)
+       ; (wanderlust +gmail)
 
        :app
        calendar

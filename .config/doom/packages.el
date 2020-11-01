@@ -55,3 +55,6 @@
 (package! mu4e-alert)
 (package! oauth2)
 (package! org-caldav)
+(package! zoom)
+(package! kubernetes)
+(package! k8s-mode)

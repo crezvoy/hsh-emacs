@@ -20,6 +20,20 @@
                (battery))
   (display-battery-mode 1))                       ; On laptops it's nice to know how much power you have
 
+(setq eshell-aliases-file "~/.config/doom/eshell_aliases")
+(defun dired-other-window ()
+  (interactive)
+  (other-window)
+  (dired (default-directory)))
+
+(use-package! zoom
+  :hook (doom-first-input . zoom-mode)
+  :config
+  (setq zoom-size '(0.90 . 0.80)
+        ;; zoom-ignored-major-modes '(dired-mode vterm-mode help-mode helpful-mode rxt-help-mode help-mode-menu org-mode)
+        zoom-ignored-buffer-names '("*doom:scratch*" "*info*" "*helpful variable: argv*")
+        zoom-ignored-buffer-name-regexps '("^\\*calc" "\\*helpful variable: .*\\*")
+        zoom-ignore-predicates (list (lambda () (< (count-lines (point-min) (point-max)) 15)))))
 
 ;
 ; (defvar fancy-splash-image-template)
