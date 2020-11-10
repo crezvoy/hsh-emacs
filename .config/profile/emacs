@@ -1,8 +1,8 @@
 #!/bin/sh
 
 export ALTERNATE_EDITOR=""
-export EDITOR="emacsclient -t -a ''"
-export VISUAL="emacsclient -c -a '' -n"
+export EDITOR="emacsclient -a ''"
+export VISUAL="emacsclient -a '' -n"
 
 export DOOMDIR="$HOME/.config/doom"
 
