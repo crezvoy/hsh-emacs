@@ -2,7 +2,7 @@
 
 export ALTERNATE_EDITOR=""
 export EDITOR="emacsclient -a ''"
-export VISUAL="emacsclient -a '' -n"
+export VISUAL="emacsclient -a '' -c"
 
 export DOOMDIR="$HOME/.config/doom"
 

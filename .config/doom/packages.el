@@ -58,3 +58,4 @@
 ;; (package! zoom)
 (package! kubernetes)
 (package! k8s-mode)
+(package! org-bullets)

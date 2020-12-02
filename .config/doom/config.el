@@ -26,6 +26,9 @@
   (other-window)
   (dired (default-directory)))
 
+;; defaults to english dictionary
+(setq ispell-dictionary "en")
+
 ;; (use-package! zoom
 ;; :hook (doom-first-input . zoom-mode)
 ;; :config
@@ -62,8 +65,10 @@
          (next (% (+ cur 1) len)))
     (nth next l)))
 
-(setq my/themes '(doom-solarized-light
-                  doom-solarized-dark))
+;; (setq my/themes '(doom-solarized-light
+;;                   doom-solarized-dark)))
+(setq my/themes '(doom-plain
+                  doom-plain-dark))
 
 (setq my/current-theme (car my/themes))
 
@@ -109,6 +114,17 @@
   (let ((load-it (lambda (f)
                    (load-file (concat (file-name-as-directory dir) f)))))
     (mapc load-it (directory-files dir nil "\\.el$"))))
+
+(defun my/whats-that-squiggle ()
+  (interactive)
+  (let* ((interesting-properties '(flycheck-error flyspell-overlay flymake-overlay))
+         (present-properties (cl-remove-if-not
+                              (lambda (p) (get-char-property (point) p))
+                              interesting-properties)))
+    (if present-properties
+        (message "This squiggle represents: %s"
+                 (mapconcat 'symbol-name present-properties ", "))
+      (message "No interesting properties present"))))
 
 (when (file-directory-p "~/.config/doom/parts/")
   (load-directory "~/.config/doom/parts/"))

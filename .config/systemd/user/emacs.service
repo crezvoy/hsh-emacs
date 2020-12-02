@@ -3,14 +3,13 @@ Description=Emacs text editor
 Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
 
 [Service]
-Type=forking
-ExecStart=/usr/bin/emacs --daemon --user %u
-ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
-Environment=SSH_AUTH_SOCK=%t/keyring/ssh
-Environment=LC_ALL=en_US.UTF-8
-Environment=TERM=xterm-256color
+Type=notify
+ExecStart=/home/crezvoy/.local/share/emacs/bin/emacs --fg-daemon
+ExecStop=/home/crezvoy/.local/share/emacs/bin/emacsclient --eval "(kill-emacs)"
+# The location of the SSH auth socket varies by distribution, and some
+# set it from PAM, so don't override by default.
+# Environment=SSH_AUTH_SOCK=%t/keyring/ssh
 Restart=on-failure
 
 [Install]
 WantedBy=default.target
-# Intégration avec Systemd:1 ends here
